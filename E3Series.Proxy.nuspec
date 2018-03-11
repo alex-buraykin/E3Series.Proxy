@@ -12,6 +12,6 @@
         <tags>Zuken E3Series E3.series</tags>
     </metadata>
     <files>
-        <file src="bin\Release\E3Series.Proxy.dll" target="lib\net40\" />
+        <file src="E3Series.Proxy\bin\Release\E3Series.Proxy.dll" target="lib\net40\" />
     </files>
 </package>
