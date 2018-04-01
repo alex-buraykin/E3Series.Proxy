@@ -1,11 +1,12 @@
 ﻿using E3Series.Proxy.Abstract;
+using E3Series.Proxy.Interfaces;
 
 namespace E3Series.Proxy
 {
     /// <summary>
     /// Proxy class (generated for E3.series 2015.1613)
     /// </summary>
-    public sealed class E3DimensionProxy : E3ProxyBase
+    public sealed class E3DimensionProxy : E3ProxyBase, IAttributed
     {
         public E3DimensionProxy(object comObject) : base(comObject)
         {

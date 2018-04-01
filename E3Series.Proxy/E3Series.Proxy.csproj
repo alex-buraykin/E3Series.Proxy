@@ -82,6 +82,8 @@
     <Compile Include="E3UserMenuItemProxy.cs" />
     <Compile Include="E3VariantProxy.cs" />
     <Compile Include="E3WespeProxy.cs" />
+    <Compile Include="Extensions\E3ArraysExtensions.cs" />
+    <Compile Include="Interfaces\IAttributed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

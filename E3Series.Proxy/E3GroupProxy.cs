@@ -1,11 +1,15 @@
-﻿using E3Series.Proxy.Abstract;
+﻿using System;
+using System.Linq;
+using E3Series.Proxy.Abstract;
+using E3Series.Proxy.Extensions;
+using E3Series.Proxy.Interfaces;
 
 namespace E3Series.Proxy
 {
     /// <summary>
     /// Proxy class (generated for E3.series 2015.1613)
     /// </summary>
-    public sealed class E3GroupProxy : E3ProxyBase
+    public sealed class E3GroupProxy : E3ProxyBase, IAttributed
     {
         public E3GroupProxy(object comObject) : base(comObject)
         {
@@ -36,6 +40,13 @@ namespace E3Series.Proxy
             return ComObject.DeleteAttribute(name);
         }
 
+        public int GetAttributeCount()
+        {
+            object attIds = null;
+            GetAttributeIds(ref attIds);
+            return attIds.ToIEnumerable().Count();
+        }
+
         public int DeleteContents()
         {
             return ComObject.DeleteContents();
@@ -54,6 +65,12 @@ namespace E3Series.Proxy
         public string GetAttributeValue(string name)
         {
             return ComObject.GetAttributeValue(name);
+        }
+
+        [Obsolete("Method is not supported", true)]
+        public int HasAttribute(string name)
+        {
+            throw new System.NotSupportedException("Method is not supported");
         }
 
         public int GetGroupId(int id)

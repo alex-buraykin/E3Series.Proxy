@@ -1,19 +1,22 @@
-﻿using E3Series.Proxy.Abstract;
+﻿using System;
+using E3Series.Proxy.Abstract;
+using E3Series.Proxy.Interfaces;
 
 namespace E3Series.Proxy
 {
     /// <summary>
     /// Proxy class (generated for E3.series 2015.1613)
     /// </summary>
-    public sealed class E3DeviceProxy : E3ProxyBase
+    public sealed class E3DeviceProxy : E3ProxyBase, IAttributed
     {
         public E3DeviceProxy(object comObject) : base(comObject)
         {
         }
 
+        [Obsolete("Obsolete: wrong name. Use AddAttributeValue() instead", true)]
         public int AddAttibuteValue(string name, string value)
         {
-            return ComObject.AddAttibuteValue(name, value);
+            return AddAttributeValue(name, value);
         }
 
         public int AddAttributeValue(string name, string value)
